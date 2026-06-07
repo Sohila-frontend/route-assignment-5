@@ -1,0 +1,1070 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1f2937;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 70px;
+    background: #1e3a8a;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+}
+
+.logo-icon {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.sidebar-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.sidebar-icons a {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    color: #93c5fd;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.sidebar-icons a:hover, .sidebar-icons a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.main-wrapper {
+    margin-right: 70px;
+    width: calc(100% - 70px);
+    padding: 20px 30px;
+    flex: 1;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 16px 24px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    background: #3b82f6;
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.user-details h4 {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-notif {
+    background: #ef4444;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.user-details p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.user-section i {
+    font-size: 18px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-info {
+    text-align: left;
+}
+
+.brand-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.brand-info p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.brand-icon {
+    width: 45px;
+    height: 45px;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-box p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.stat-box h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.stat-box h2 span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.stat-percent {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stat-percent.up { color: #10b981; }
+.stat-percent.down { color: #ef4444; }
+
+.content-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+}
+
+.chart-section, .activity-section {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.chart-container h4 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.chart-legend i {
+    font-size: 8px;
+    margin-left: 6px;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    gap: 20px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 160px;
+}
+
+.bar {
+    width: 35px;
+    border-radius: 6px 6px 0 0;
+}
+
+.bar.red { background: #f87171; }
+.bar.green { background: #34d399; }
+
+.bar-group span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.activity-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.activity-content p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.activity-content span {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.activity-icon-box {
+    width: 45px;
+    height: 45px;
+    background: #dbeafe;
+    color: #3b82f6;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.activity-icon-box.orange {
+    background: #fed7aa;
+    color: #ea580c;
+}
+
+.view-all {
+    text-align: center;
+    color: #6b7280;
+    font-size: 13px;
+    text-decoration: none;
+    padding-top: 8px;
+}  
+
+.transactions-section {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.transactions-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.view-all-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.transactions-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-table th {
+    text-align: right;
+    padding: 12px 16px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.transactions-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+}
+
+.transactions-table tr:last-child td {
+    border-bottom: none;
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.transaction-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.transaction-info p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+}
+
+.avatar-circle.blue { background: #3b82f6; }
+.avatar-circle.orange { background: #f97316; }
+.avatar-circle.red { background: #ef4444; }
+.avatar-circle.green { background: #10b981; }
+.avatar-circle.purple { background: #8b5cf6; }
+.avatar-circle.dark { background: #1f2937; }
+
+.amount {
+    font-weight: 700;
+}
+
+.amount.income { color: #10b981; }
+.amount.expense { color: #ef4444; }
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.done {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.transactions-table td i {
+    margin-left: 6px;
+    color: #6b7280;
+}
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.transactions-table td i {
+    margin-left: 6px;
+    color: #6b7280;
+}
+
+.summary-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.account-summary, .bills-section {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.account-summary .section-header,
+.bills-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.view-all-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.account-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.account-info {
+    text-align: right;
+}
+
+.account-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.account-info p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.account-amount {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.account-amount .credit {
+    color: #ef4444;
+}
+
+.account-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.account-icon.blue { background: #dbeafe; color: #3b82f6; }
+.account-icon.green { background: #d1fae5; color: #10b981; }
+.account-icon.red { background: #fee2e2; color: #ef4444; }
+
+.bills-total {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 24px;
+}
+
+.bills-total h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.bills-total h2 span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.bills-total p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.bills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.bill
+
+.payment-budget-row {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.payment-methods, .budget-overview {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment-card {
+    padding: 20px;
+    border-radius: 16px;
+    color: #fff;
+    position: relative;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visa-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #000000 100%);
+}
+
+.mastercard {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+}
+
+.paypal-card {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.card-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-type {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-number {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-holder span, .card-expiry span {
+    font-size: 10px;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.card-holder p, .card-expiry p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.paypal-details {
+    text-align: right;
+}
+
+.paypal-details p {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.paypal-details span {
+    font-size: 10px;
+    opacity: 0.8;
+    display: block;
+}
+
+.paypal-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.paypal-details .status {
+    margin-top: 8px;
+}
+
+.budget-total-card {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.budget-total-info p {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.budget-total-info h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.budget-total-info h2 span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.budget-spent-info {
+    text-align: left;
+}
+
+.budget-spent-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.budget-spent-info h3 span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.budget-spent-info p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.budget-detail {
+    font-size: 11px;
+    color: #9ca3af;
+    display: block;
+    margin: 6px 0;
+}
+
+.progress-bar {
+    width: 120px;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 6px 0;
+}
+
+.progress-bar.small {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.progress {
+    height: 100%;
+    background: #10b981;
+    border-radius: 10px;
+}
+
+.progress.orange { background: #f97316; }
+.progress.red { background: #ef4444; }
+.progress.purple { background: #8b5cf6; }
+.progress.blue { background: #3b82f6; }
+
+.progress-percent {
+    font-size: 11px;
+    font-weight: 600;
+    color: #10b981;
+}
+
+.budget-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.budget-item-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.budget-item-title i {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.budget-item-title h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.budget-item-info > span {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.budget-item-amount {
+    text-align: left;
+    min-width: 140px;
+}
+
+.budget-item-amount h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.budget-item-amount h4 span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.budget-item-amount .remaining {
+    font-size: 11px;
+    color: #6b7280;
+    background: #e5e7eb;
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.budget-item-amount .remaining.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+.payment-budget-row {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.payment-methods, .budget-overview {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment-card {
+    padding: 20px;
+    border-radius: 16px;
+    color: #fff;
+    position: relative;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visa-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #000000 100%);
+}
+
+.mastercard {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+}
+
+.paypal-card {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.card-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-type {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-number {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-holder span, .card-expiry span {
+    font-size: 10px;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.card-holder p, .card-expiry p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.paypal-details {
+    text-align: right;
+}
+
+.paypal-details p {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.paypal-details span {
+    font-size: 10px;
+    opacity: 0.8;
+    display: block;
+}
+
+.paypal-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.paypal-details .status {
+    margin-top: 8px;
+}
+
+.budget-total-card {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.budget-total-info p {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.budget-total-info h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.budget-total-info h2 span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.budget-spent-info {
+    text-align: left;
+}
+
+.budget-spent-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.budget-spent-info h3 span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.budget-spent-info p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.budget-detail {
+    font-size: 11px;
+    color: #9ca3af;
+    display: block;
+    margin: 6px 0;
+}
+
+.progress-bar {
+    width: 120px;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 6px 0;
+}
+
+.progress-bar.small {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.progress {
+    height: 100%;
+    background: #10b981;
+    border-radius: 10px;
+}
+
+.progress.orange { background: #f97316; }
+.progress.red { background: #ef4444; }
+.progress.purple { background: #8b5cf6; }
+.progress.blue { background: #3b82f6; }
+
+.progress-percent {
+    font-size: 11px;
+    font-weight: 600;
+    color: #10b981;
+}
+
+.budget-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.budget-item-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.budget-item-title i {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.budget-item-title h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.budget-item-info > span {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.budget-item-amount {
+    text-align: left;
+    min-width: 140px;
+}
